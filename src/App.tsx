@@ -1,13 +1,19 @@
+import { useBio } from "./context/bio/useBio"
 
-import LazyEg from './component/LazyEg';
+
 
 function App() {
 
+  const name = useBio()
 
 
   return (
     <>
-      <LazyEg />
+
+      <h1>{name}</h1>
+
+
+
     </>
   )
 }
