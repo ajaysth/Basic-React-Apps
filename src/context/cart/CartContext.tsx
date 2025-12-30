@@ -1,4 +1,15 @@
 import { createContext } from "react";
-import type { CartState, CartAction } from "../../types/types";
+import { initialState } from "./reducer";
+import type { CartState, CartAction } from "./carttype";
 
-const CartContext = createContext<{ state: CartState; dispatch: React.Dispatch<CartAction>; }>({ state: initialState, dispatch: () => null, });
+type CartContextType = {
+    state: CartState;
+    dispatch: React.Dispatch<CartAction>;
+};
+
+export const CartContext = createContext<CartContextType>({
+    state: initialState,
+    dispatch: () => null,
+});
+
+
